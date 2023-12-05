@@ -33,14 +33,36 @@ const LoginForm: React.FC = () => {
 
   const onSubmit = useCallback(
     async (data: FormData) => {
-      try {
-        // await login(data)
-        if (redirect?.current) router.push(redirect.current as string)
-        else router.push('/')
-        window.location.href = '/'
-      } catch (_) {
-        setError('There was an error with the credentials provided. Please try again.')
+      // try {
+      //   // await login(data)
+      //   if (redirect?.current) router.push(redirect.current as string)
+      //   else router.push('/')
+      //   window.location.href = '/'
+      // } catch (_) {
+      //   setError('There was an error with the credentials provided. Please try again.')
+      // }
+      const username = // get username from form
+  const password = // get password from form
+
+  try {
+    const loginResponse = await loginUser(username, password);
+
+    if (loginResponse.error) {
+      // User doesn't exist, create the user
+      const createUserResponse = await createUser(username, password);
+
+      if (!createUserResponse.error) {
+        // User created successfully, log in
+        await loginUser(username, password);
+      } else {
+        // Handle createUser error
       }
+    } else {
+      // User exists, log in
+    }
+  } catch (error) {
+    // Handle general error
+  }
     },
     // [login, router],
     [router],
