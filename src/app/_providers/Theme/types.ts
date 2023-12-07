@@ -8,3 +8,5 @@ export interface ThemeContextType {
 export function themeIsValid(string: string | null): string is Theme {
   return string ? ['light', 'dark'].includes(string) : false
 }
+
+export const themeLocalStorageKey = 'payload-theme'

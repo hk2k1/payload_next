@@ -18,3 +18,18 @@
   opacity: 0;
   visibility: hidden;
 }
+
+.darkModeButton {
+  background-color: #151515; // Dark background color
+  color: #fff; // Light text color
+  padding: 10px 15px;
+  min-width: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555; // Darker background color on hover
+  }
+}

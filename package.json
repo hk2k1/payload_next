@@ -20,6 +20,7 @@
     "lint:fix": "eslint --fix --ext .ts,.tsx src"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@payloadcms/bundler-webpack": "latest",
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/richtext-slate": "latest",
